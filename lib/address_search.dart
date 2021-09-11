@@ -45,7 +45,9 @@ class AddressSearch extends SearchDelegate<Suggestion> {
       future: query == ""
           ? null
           : apiClient.fetchSuggestions(
-              query, Localizations.localeOf(context).languageCode),
+              query,
+              Localizations.localeOf(context).languageCode,
+            ),
       builder: (context, snapshot) => query == ''
           ? Container(
               padding: EdgeInsets.all(16.0),
@@ -57,12 +59,17 @@ class AddressSearch extends SearchDelegate<Suggestion> {
                     title:
                         Text((snapshot.data[index] as Suggestion).description),
                     onTap: () {
-                      close(context, snapshot.data[index] as Suggestion);
+                      close(
+                        context,
+                        snapshot.data[index] as Suggestion,
+                      );
                     },
                   ),
                   itemCount: snapshot.data.length,
                 )
-              : Container(child: Text('Loading...')),
+              : Container(
+                  child: Text('Loading...'),
+                ),
     );
   }
 }

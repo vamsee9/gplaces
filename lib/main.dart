@@ -1,7 +1,5 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'place_service.dart';
 import 'package:uuid/uuid.dart';
 import 'address_search.dart';
@@ -66,10 +64,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final _controller = TextEditingController();
-  // String _streetNumber = '';
-  // String _street = '';
-  // String _city = '';
-  // String _zipCode = '';
 
   @override
   void dispose() {
@@ -140,11 +134,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       );
                     return Text('Loading...');
                   }),
-            // SizedBox(height: 20.0),
-            // Text('Street Number: $_streetNumber'),
-            // Text('Street: $_street'),
-            // Text('City: $_city'),
-            // Text('ZIP Code: $_zipCode'),
           ],
         ),
       ),

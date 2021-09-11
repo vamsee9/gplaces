@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart';
-import 'package:google_maps_webservice/places.dart';
 
 // class Place {
 //   String streetNumber;
@@ -65,7 +64,6 @@ class PlaceApiProvider {
         '&key=$apiKey' // Google places API Key
         '&sessiontoken=$sessionToken'; // session token as authorization {billing optimization}
     final response = await client.get(Uri.parse(request));
-    Map<dynamic, dynamic> res = json.decode(response.body);
 
     if (response.statusCode == 200) {
       final result = json.decode(response.body);
